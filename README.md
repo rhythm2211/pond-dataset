@@ -138,6 +138,25 @@ eda_step_3_baseline_model.py          # (Leakage demonstration only – do not u
 eda_step_4_leakage_check.py
 eda_step_5_honest_baseline_model.py   # Final 95.93% model
 ```
+### 6.1. Feature Extraction Pipeline (Data Generation)
+
+The `master_wallet_dataset.csv` was generated using the script `fetch_wallet_features.py`.
+
+**Process:**  
+This script takes an input CSV of wallet addresses, queries the Covalent API for on-chain data, and computes **31 features** for each wallet.
+
+**Features:**  
+It calculates:
+- **Financial metrics** (e.g., `total_token_usd_value`)
+- **Portfolio metrics** (e.g., `unique_token_count`)
+- **Temporal metrics** (e.g., `wallet_age_days`)
+- **Behavioral metrics** (e.g., `failed_tx_ratio`)
+
+**To Reproduce the Master Dataset:**
+
+1. Install dependencies:
+   ```bash
+   pip install pandas numpy requests tqdm
 
 ---
 
